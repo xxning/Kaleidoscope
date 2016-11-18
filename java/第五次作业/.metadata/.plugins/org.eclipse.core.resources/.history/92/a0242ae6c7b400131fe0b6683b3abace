@@ -1,0 +1,18 @@
+
+public class practice2 {
+	
+	public static long a(long n,long k){
+		if(k==0)return 1;
+		if(n==0)return 0;
+		return a(n-1,k-1)+a(n-1,k);
+	}
+	
+
+	public static void main(String[] args) {
+		int n=StdIn.readInt();
+		int m=StdIn.readInt();
+		StdOut.println(a(n,m));
+
+	}
+
+}

@@ -1,0 +1,21 @@
+import java.awt.Color;
+
+public class practice2 {
+	
+   
+	public static void main(String[] args) {
+		Picture pic=new Picture ("ren.jpg");
+		for(int x=0;x<pic.width();x++){
+			for(int y=0;y<pic.height();y++){
+				Color co =pic.get(x, y);
+				Color ch=lum.toGray(co);
+				pic.set(x,y,ch);
+			}
+		}
+		
+		pic.show();
+		
+		
+	}
+
+}

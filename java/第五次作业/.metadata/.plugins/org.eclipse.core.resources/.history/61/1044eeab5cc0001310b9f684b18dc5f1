@@ -1,0 +1,14 @@
+
+
+
+public class practice2 {
+	
+	public static void main(String[] args) {
+		StdDraw.square(0.3, 0.7, 0.3);
+	}
+   
+
+	  
+	
+
+}

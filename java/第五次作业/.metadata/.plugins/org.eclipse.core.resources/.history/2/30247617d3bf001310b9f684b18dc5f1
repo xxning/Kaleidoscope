@@ -1,0 +1,39 @@
+
+public class LFSR {
+     
+	private int N;          
+    private int[] reg;      
+    private int tap;        
+    
+    LFSR(String s,int n){
+    	
+    }
+    
+        // constructor to create LFSR with the given initial seed and tap
+        public LFSR(String seed, int t) {
+            // PUT YOUR CODE HERE
+        }
+      
+        // simulate one step and return the new bit as 0 or 1
+        public int step() {
+            // PUT YOUR CODE HERE
+        }
+      
+        // simulate k steps and return k-bit integer
+        public int generate(int k) {
+            // PUT YOUR CODE HERE
+        }
+
+        // return a string representation of the LFSR
+        public String toString()  {
+            // PUT YOUR CODE HERE
+        }
+       
+      
+        // test client
+        public static void main(String[] args)  {
+           // PUT YOUR TEST CODE HERE
+        }
+
+
+}

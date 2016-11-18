@@ -1,0 +1,50 @@
+
+class LFSR {
+	public LFSR(String exp, int tap) {
+		m_n=exp.length();
+		m_bits=binstr2int(exp);
+		m_tap=tap;
+		m_mask=(1<<m_n)-1;
+	}
+	public int step() {
+		int t= (((1<<(m_n-1)) & m_bits)>>(m_n-1)) ^ (((1<<m_tap) & m_bits)>>m_tap);
+		m_bits=(m_bits<<1) & m_mask;
+		m_bits |= t;
+		return t;
+	}
+	public int generate(int k) {
+		int r=0;
+		for (int i=0; i<k; i++) {
+			r=r*2+step();
+		}
+		return r;
+	}
+	public String toString() {
+		String r="";
+		for (int i=0; i<m_n; i++) {
+			if ( ((1<<i) & m_bits) > 0 )
+				r="1"+r;
+			else r="0"+r;
+		}
+		return r;
+	}
+	
+	public static void main(String arg[]) {
+		LFSR r=new LFSR("01101000010", 8);
+		for (int i=0 ; i<10; i++) {
+			int t=r.generate(5);
+			System.out.println(r+" "+t);
+		}
+	}
+	private int binstr2int(String s) {
+		int q=1, sum=0;
+		for (int i=0; i<s.length(); i++) {
+			if (s.charAt(s.length()-i-1)=='1')
+				sum+=q;
+			q*=2;
+		}
+		return sum;
+	}
+		
+	private int m_n, m_tap, m_bits, m_mask;
+}

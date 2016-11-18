@@ -1,0 +1,17 @@
+import java.awt.Color;
+
+
+public class practice2 {
+	
+	public static void main(String[] args) {
+		
+		Picture a=new Picture(1000, 500);
+		a.set(2,2,new Color(54,14,134));a.show();
+		
+	}
+   
+
+	  
+	
+
+}

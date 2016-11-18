@@ -1,0 +1,29 @@
+import java.awt.Color;
+
+public class practice2 {
+	
+   
+	public static void main(String[] args) {
+		String filename="ren.jpg";
+		int w=StdIn.readInt();
+		int h=StdIn.readInt();
+		Picture source=new Picture(filename);
+		Picture target=new Picture(w,h);
+		
+		for(int tx=0;tx<target.width();tx++){
+			for(int ty=0;ty<target.height();ty++){
+				int sx=tx*source.width()/target.width();
+				int sy=ty*source.width()/target.width();
+				Color color=source.get(sx,sy);
+				target.set(sx,sy,color);
+			}
+		}
+		
+		
+		
+		source.show();
+		target.show();
+	}
+	
+
+}

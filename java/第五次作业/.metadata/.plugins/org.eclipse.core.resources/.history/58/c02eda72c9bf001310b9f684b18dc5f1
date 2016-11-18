@@ -1,0 +1,16 @@
+
+public class LFSR {
+     
+	private int N;          
+    private int[] reg;      
+    private int tap;        
+    
+    LFSR(String s,int n){
+    	
+    }
+    toString()
+    step()
+    generate()
+	
+
+}
